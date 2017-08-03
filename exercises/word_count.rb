@@ -11,6 +11,7 @@
 def word_count(string)
   # Hint: You'll want to use String#split
   # See: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-split
+  return string.split.count
 end
 
 if __FILE__ == $PROGRAM_NAME
