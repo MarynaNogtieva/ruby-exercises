@@ -17,11 +17,21 @@
 def count_in_list(list, item_to_count)
   # You'll need three things:
   #  1. A running total of the number of times you've seen the item
+  total_items = 0
   #  2. A way to loop/iterate through the list
-  #  3. A way to add to the running total as you see the item
+  list.each do |num|
+      #  3. A way to add to the running total as you see the item
+    if num == item_to_count
+      total_items +=1
+    end
+  end
+return total_items
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+    p count_in_list([1,2,3], 1)  == 1
+    p count_in_list([1,2,3], -1) == 0
+    p count_in_list([1,1,1], 1)  == 3
+    p count_in_list([99,10,1], 99)  == 1
+    p count_in_list([1,0,0], 0)  == 2
 end
