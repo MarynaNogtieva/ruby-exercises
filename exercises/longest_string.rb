@@ -13,9 +13,24 @@
 
 def longest_string(list)
   # This is your job. :)
+  longest_string = ""
+    list.each do |word|
+      #instead of length we can use count as well
+      if(word.length > longest_string.length)
+        longest_string = word
+      end
+    end
+
+    return longest_string
+  
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  # "p" prints something to the screen in a way that's better for debugging
+
+  p longest_string(["Lorem ipsum","Ne ius reque denique complectitur", ""]) == "Ne ius reque denique complectitur"
+  p longest_string(["Et his soleat soluta","Ne ius ", ""]) == "Et his soleat soluta"
+  p longest_string(["ipsum","Ne", "t"]) == "ipsum"
+  p longest_string(["Ldsa"," ", "dfdsf"]) == "dfdsf"
+
 end
