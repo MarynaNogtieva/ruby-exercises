@@ -20,14 +20,38 @@
 
 require_relative "./print_triangle"
 
+def print_reverse_line(count)
+   (1..count).each do |i|
+     print "*"
+   end
+   print "\n"
+end
+
 def print_pyramid(height)
   # This is your job. :)
   # Suggestion: you can call print_triangle to print out the first, "upward"
   # half of the pyramid. You'll have to write code to print out the second,
   # "downward" half of the pyramid.
+  print_triangle(height)
+  while(height >0)
+    print_reverse_line(height-1)
+    height -= 1
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  print_pyramid(1)
+
+  print "\n\n\n" # This is here to make the separation between triangles clearer
+
+  print_pyramid(2)
+
+  print "\n\n\n" # This is here to make the separation between triangles clearer
+
+  print_pyramid(3)
+
+  print "\n\n\n" # This is here to make the separation between triangles clearer
+
+  print_pyramid(10)
 end
