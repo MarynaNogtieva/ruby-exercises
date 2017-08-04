@@ -10,6 +10,7 @@ def shortest_string(list)
       #instead of length we can use count as well
       if(word.length < shortest_string.length)
         shortest_string = word
+        
       end
     end
 

@@ -22,9 +22,12 @@ def count_max(list)
   #
   # But remember: inelegant, working code is better than elegant,
   # unfinished code.
+  maximum = max(list)
+  return count_in_list(list, maximum)
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  p count_max([10, 1,2,10,10]) == 3
+  p count_max([100,98,200,200,100,200]) == 3
+  p count_max([-100,-98,-200,-200,-100,-200]) == 1
 end
