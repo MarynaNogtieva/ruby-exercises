@@ -11,7 +11,16 @@
 #  *****
 # *******
 
+
 def print_horizontal_pyramid(height)
+  (1..height).each do |i|
+    space_amount = height -i
+    print " " * space_amount
+    start_amount =  2 * i - 1
+    print "*" * start_amount
+    print " " * space_amount
+    print "\n"
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
