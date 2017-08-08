@@ -25,8 +25,23 @@
 #   1 bottle
 #   no more bottles
 #   etc.
+def initial_bottles(num)
+ puts "#{num} bottles of beer on the wall, #{num} bottles of beer."
+end
+
+def remaining_bottles(num)
+  if num <= 0
+    num = "no more bottles"
+  end
+  puts "Take one down, pass it around, #{num} bottle of beer on the wall!"
+end
 
 def bottles(start_number)
+   start_number.downto(1) do |i|
+     initial_bottles(i)
+     remaining_bottles(i-1)
+   end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
